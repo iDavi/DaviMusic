@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/favicon.ico">
+    <script src="/global.js"></script>
+    <link href="/global.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script src="/scripts/library.js"></script>
+    <link href="/style/library.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <div id="left-menu">
+        <ul>
+            <li><img src="/images/logo.png" id="logo"></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/library.html">Library</a></li>
+            <li><a href="/download.html">Download songs</a></li>
+        </ul>
+    </div>
+    <div id="library">
+        <h1>
+            Your library
+        </h1>
+        <!--combobox-->
+        <select id="select-library-section">
+            <option value="liked">Liked Songs</option>
+            <option value="recently">Recently played</option>
+            <option value="downloaded">Downloaded songs</option>
+        </select>
+        <br>
+        <div id="result" class="grid">
+        </div>
+</body>
+
+</html>

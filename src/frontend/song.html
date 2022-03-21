@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="/favicon.ico">
+    <script src="/global.js"></script>
+    <link href="/global.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+    <script src="/scripts/song.js"></script>
+    <link href="/style/song.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+    <iframe src="" id="background-iframe"></iframe>
+    <div id="left-menu">
+        <ul>
+            <li><img src="/images/logo.png" id="logo"></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/library.html">Library</a></li>
+            <li><a href="/download.html">Download songs</a></li>
+        </ul>
+    </div>
+    <div id="video-container">
+        <!--url: /song/:youtubevideoid-->
+        <iframe id="video" src="" frameborder="0" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        <div id="video-info">
+            <p id="video-title">Loading...</p>
+            <p id="video-author"></p>
+            <span class="material-icons" id="like-video-button">
+                favorite
+            </span>
+            <span class="material-icons" id="download-video-button">
+                file_download
+            </span>
+        </div>
+
+    </div>
+    <div id="recommended">
+        <br>
+        <br>
+        <h2>Related videos:</h2>
+        <div id="related-videos" class="grid">
+
+        </div>
+    </div>
+    </div>
+</body>

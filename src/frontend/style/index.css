@@ -1,0 +1,60 @@
+
+
+
+* {
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    background: #200122;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #200122, #6f0000); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #200122, #6f0000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+
+#recommended {
+    margin-left: 210px;
+    font-family: "Poppins", sans-serif;
+    color: white;
+}
+
+#recommended h3:hover {
+    color: #dadada;
+}
+
+#add-new-section {
+    
+    margin-top: 20px;
+    margin-left: 210px;
+    font-family: "Poppins", sans-serif;
+    color: white;
+    background: #6f0000;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#add-new-section:hover {
+    background: #470000;
+    transition: all 0.3s ease-in-out;
+}
+
+#delete-section-button {
+    margin-top: -15px;
+    margin-left: 90%;
+    color: white;
+    background: #6f0000;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#delete-section-button:hover {
+    background: #470000;
+    transition: all 0.3s ease-in-out;
+}
+
+
