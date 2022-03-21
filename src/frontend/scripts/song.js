@@ -15,18 +15,25 @@ $(document).ready(async () =>{
     refreshLikes()
     let reqVideo = await fetch("/api/search?q=" + window.location.href.split("/")[4])
     let bodyVideo = await reqVideo.json()
-    $("#video").attr("src", "https://www.youtube.com/embed/" + window.location.href.split("/")[4] + "?loop=1&playlist=" + window.location.href.split("/")[4] + "&autoplay=1")
+
+    let isDownloadedReq = await fetch("/api/check-if-downloaded?vidId=" + window.location.href.split("/")[4])
+    let isDownloaded = await isDownloadedReq.json()
+    if(isDownloaded){
+        $("#download-button").text("check")
+        downloadButtonPressed = true
+        $("#video").attr("src", "/api/get-video?vidId=" + window.location.href.split("/")[4])
+    }else{
+        $("#video").attr("src", "https://www.youtube.com/embed/" + window.location.href.split("/")[4] + "?loop=1&playlist=" + window.location.href.split("/")[4] + "&autoplay=1")
+    }
     $("#background-iframe").attr("src", "https://www.youtube.com/embed/" + window.location.href.split("/")[4] + "?autoplay=1&controls=0&loop=1&playlist=" + window.location.href.split("/")[4] + "&modestbranding=1&rel=0&showinfo=0&autohide=1&mute=1")
     let video = bodyVideo[0]
     let video_title = video.title
     let video_url = video.link
     let video_thumbnail = video.snippet.thumbnails.default.url
     let video_id = video.id.videoId
-    let video_author = video.author
 
 
     $("#video-title").text(video_title)
-    $("#video-author").text(video_author)
     console.log(video_title)
 
     //load related videos
@@ -36,10 +43,8 @@ $(document).ready(async () =>{
     for (let i = 0; i < 5; i++) {
         let relatedVideo = relatedVideos[i]
         let relatedVideo_title = relatedVideo.title
-        let relatedVideo_url = relatedVideo.link
         let relatedVideo_thumbnail = relatedVideo.snippet.thumbnails.default.url
         let relatedVideo_id = relatedVideo.id.videoId
-        let relatedVideo_author = relatedVideo.author
 
         if(relatedVideo_title.length > 55){
             relatedVideo_title = relatedVideo_title.substring(0, 55) + "..."
@@ -64,6 +69,12 @@ $(document).ready(async () =>{
     $("#download-video-button").click(async () => {
         if(downloadButtonPressed)
             return;
+        Swal.fire({
+            title: 'Downloading...',
+            onBeforeOpen: () => {
+                Swal.showLoading()
+            }
+        })
         downloadButtonPressed = true
         $("#download-video-button").text("refresh")
         let req = await fetch("/api/download?vidId=" + window.location.href.split("/")[4] + "&format=mp4")

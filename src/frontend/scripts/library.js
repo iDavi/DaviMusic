@@ -12,7 +12,8 @@ $(document).ready(async () => {
 async function refreshSongs(){
     const user = {
         liked: JSON.parse(window.localStorage.getItem("liked")),
-        recently: JSON.parse(window.localStorage.getItem("recently"))
+        recently: JSON.parse(window.localStorage.getItem("recently")),
+        downloaded: JSON.parse(window.localStorage.getItem("downloaded"))
     }
     const selected = $("#select-library-section").val()
     for (let x = user[selected].length - 1; x > 0 && $("#select-library-section").val() === selected; x--) {
