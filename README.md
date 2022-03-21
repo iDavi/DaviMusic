@@ -8,13 +8,16 @@
 
 **😎 | Anonymous**
 
-##How to run?
-``
-git clone https://github.com/iDavi/DaviMusic/
+**💻 | Node.js, HTML, CSS and JS. Powered by Electron.**
 
-cd DaviMusic
 
-npm install
+## How to run?
 
-npm start
-``
+`git clone https://github.com/iDavi/DaviMusic/`
+
+`cd DaviMusic`
+
+`npm install`
+
+`npm start`
+`
